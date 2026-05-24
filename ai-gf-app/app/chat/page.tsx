@@ -130,7 +130,7 @@ export default function ChatPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-black via-purple-950 to-black text-white flex flex-col">
-      
+
       {/* Header */}
       <div className="p-4 border-b border-gray-800 flex items-center gap-3 bg-black/80 backdrop-blur-md sticky top-0 z-10">
 
@@ -203,7 +203,6 @@ export default function ChatPage() {
           </div>
         ))}
 
-        {/* Typing Animation */}
         {loading && (
           <div className="flex justify-start">
             <div className="bg-purple-700 px-4 py-3 rounded-2xl">
@@ -222,17 +221,17 @@ export default function ChatPage() {
         <div className="flex gap-2">
 
           <input
-  value={message}
-  onChange={(e) => setMessage(e.target.value)}
-  onKeyDown={(e) => {
-    if (e.key === "Enter") {
-      sendMessage();
-    }
-  }}
-  type="text"
-  placeholder="Type a message..."
-  className="flex-1 bg-gray-900 rounded-2xl px-4 py-3 outline-none border border-gray-700 focus:border-pink-500 transition"
-/>
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                sendMessage();
+              }
+            }}
+            type="text"
+            placeholder={`Message ${selectedGirl}...`}
+            className="flex-1 bg-gray-900 rounded-2xl px-4 py-3 outline-none border border-gray-700 focus:border-pink-500 transition"
+          />
 
           <button
             onClick={sendMessage}
